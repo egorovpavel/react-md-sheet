@@ -2,9 +2,7 @@
   "name": "react-md-sheet",
   "version": "0.0.1",
   "main": "dist/index.js",
-  "publishConfig": {
-    "access": "restricted"
-  },
+  "homepage": "https://github.com/egorovpavel/react-md-sheet",
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --config webpack.local.config.js --mode development --hot",
