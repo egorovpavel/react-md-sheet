@@ -45,5 +45,18 @@ const NewUserSheet = (new Builder).header(SimpleHeader).body(NewUserView).build(
 ```
 import { Builder, Route, SimpleHeader } from 'react-md-sheet'
 
+
 <Route path={`/users/*`} component={NewUserSheet} title='New User' size={40}/>
+```
+
+You can pass following properties to Route
+
+- `title : string`
+- `size: one of following [40,50,60,70,80,90,100]`
+
+### Add HTML container for `Portal` mount
+
+
+```
+<div id="sheet"></div>
 ```

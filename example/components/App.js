@@ -29,10 +29,10 @@ function App () {
         </Grid>
       </Grid>
 
-      <Route path={`/users/*`} component={NewUserSheet} title='New User' size={40}/>
-      <Route path={`/users/:id/sub`} component={SubSheet} title='Sub' size={60}/>
-      <Route path={`/users/:id/sub/sub`} component={SubSubSheet} title='Sub Sub' size={70}/>
-      <Route path={`/users/:id/sub/sub/deep`} component={DeepSheet} title='Deep sheet' size={40}/>
+      <Route path={`/users/*`} component={NewUserSheet} title='New User' color={'primary'} size={40}/>
+      <Route path={`/users/:id/sub`} component={SubSheet} title='Sub'  color={'secondary'} size={40}/>
+      <Route path={`/users/:id/sub/sub`} component={SubSubSheet} title='Sub Sub' size={40}/>
+      <Route path={`/users/:id/sub/sub/deep`} component={DeepSheet} title='Deep sheet' color={'primary'} size={40}/>
 
     </div>
   )

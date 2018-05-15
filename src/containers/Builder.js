@@ -9,8 +9,9 @@ import { enteredSheet, enteringSheet, leavedSheet, leavingSheet } from '../actio
 import styles from './Builder.style'
 import { SHEET_ANIMATION } from '../constants/constants'
 import withTimeout from 'react-timeout'
+import PropTypes from 'prop-types';
 
-let sheetId = 0
+let sheetId = 0 // TODO: move to store maybe
 
 export default class SheetBuilder {
   constructor () {
@@ -108,6 +109,7 @@ export default class SheetBuilder {
         offset: 0
       }
     })
+
     const mapDispachToProps = (dispatch) => {
       return {
         goBack: (id, props) => {
@@ -118,6 +120,11 @@ export default class SheetBuilder {
         }
       }
     }
+
+    SheetWrapper.propTypes = {
+      size : PropTypes.number.isRequired
+    }
+
     return withRouter(connect(mapStateToProps, mapDispachToProps)(withStyles(styles)(withTimeout(SheetWrapper))))
   }
 }

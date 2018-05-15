@@ -7,12 +7,13 @@ import CloseIcon from '@material-ui/icons/Close'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { leavingSheet } from '../actions/actions'
+import PropTypes from 'prop-types'
 
 function SimpleHeader (props) {
 
   return (
     <div>
-      <AppBar position="static" color="default" elevation={1}>
+      <AppBar position="static" color={props.color || 'default'} elevation={1}>
         <Toolbar>
           <IconButton onClick={() => props.goBack(props)} color="inherit" aria-label="Close">
             <CloseIcon/>
@@ -33,6 +34,11 @@ const mapDispachToProps = (dispatch) => {
       }))
     }
   }
+}
+
+SimpleHeader.propTypes = {
+  title: PropTypes.string.isRequired,
+  color: PropTypes.string
 }
 
 export default withRouter(connect(null, mapDispachToProps)((SimpleHeader)))
