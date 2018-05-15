@@ -15,6 +15,14 @@ This components is attempt to replicate GTM(https://www.google.com/analytics/tag
 
 ### Usage
 
+#### Install
+
+`yarn add react-md-sheet`
+
+or
+
+`npm add react-md-sheet`
+
 #### Combine reducers 
 
 ```
