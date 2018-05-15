@@ -4,6 +4,9 @@ status : *Proof of concept*
 
 This components is attempt to replicate GTM(https://www.google.com/analytics/tag-manager/) sliding sheets behavior. This behavior useful for displaying deeply nested configurations. 
 
+![Demo](https://raw.githubusercontent.com/egorovpavel/react-md-sheet/master/demo.gif)
+
+
 ### Dependencies
 
 - `material-ui`
