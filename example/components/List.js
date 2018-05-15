@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
-import { withStyles } from 'material-ui/styles'
-import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table'
+import withStyles from '@material-ui/core/styles/withStyles'
+import Table from '@material-ui/core/Table'
+import TableBody from '@material-ui/core/TableBody'
+import TableCell from '@material-ui/core/TableCell'
+import TableHead from '@material-ui/core/TableHead'
+import TableRow from '@material-ui/core/TableRow'
 import IconButton from 'material-ui/IconButton'
 import EditIcon from '@material-ui/icons/Edit'
-import { CircularProgress } from 'material-ui/Progress'
+import { CircularProgress } from 'material-ui/CircularProgress'
 import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 
@@ -17,7 +21,7 @@ const styles = theme => ({
   },
 })
 
-class Content extends Component {
+class List extends Component {
 
   constructor (props) {
     super(props)
@@ -43,7 +47,7 @@ class Content extends Component {
 
   render () {
 
-    return !this.state.dataLoaded ? (<CircularProgress/>) : (
+    return (
       <div>
         <Table>
           <TableHead>
@@ -76,4 +80,4 @@ class Content extends Component {
   }
 }
 
-export default withRouter(connect()(withStyles(styles)(Content)))
+export default withRouter(connect()(withStyles(styles)(List)))

@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { withStyles } from 'material-ui/styles'
-import Backdrop from 'material-ui/Modal/Backdrop'
+import withStyles  from '@material-ui/core/styles/withStyles'
+import Backdrop from '@material-ui/core/Backdrop'
 import Paper from 'material-ui/Paper'
 import classNames from 'classnames'
 import { connect } from 'react-redux'
@@ -83,7 +83,7 @@ export default class SheetBuilder {
 
           <div key={id} className={classes.root}>
             <Backdrop onClick={() => this.props.goBack(id, this.props)} open={!this.props.state.exit}/>
-            <Paper square={true} elevation={4}
+            <Paper square="true" elevation={4}
                    className={classNames(
                      classes.wrapper,
                      `size-${this.props.state.size}`,
