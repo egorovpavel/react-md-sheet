@@ -1,0 +1,5 @@
+export const SHEET_ENTERING = 'SHEET_ENTERING'
+export const SHEET_LEAVING = 'SHEET_LEAVING'
+export const SHEET_LEAVED = 'SHEET_LEAVED'
+export const SHEET_ENTERED = 'SHEET_ENTERED'
+export const SHEET_ANIMATION = 300
