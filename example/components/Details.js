@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Button from '@material-ui/core/Button'
 import { FormControl, Input, InputLabel } from '@material-ui/core/es/index'
+import { ActionHeader, sheetWithHeader } from 'react-md-sheet'
 
 class NewUserView extends React.Component {
   state = {
@@ -39,4 +40,4 @@ class NewUserView extends React.Component {
   }
 }
 
-export default withRouter(connect()(NewUserView))
+export default withRouter(connect()(sheetWithHeader(NewUserView, ActionHeader)))
