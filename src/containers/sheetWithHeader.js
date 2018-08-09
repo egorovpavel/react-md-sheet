@@ -13,7 +13,7 @@ import { SHEET_ANIMATION } from '../constants/constants'
 
 let sheetId = 0
 
-function sheetWithHeader(BodyComponent, HeaderComponent){
+function sheetWithHeader(BodyComponent, HeaderComponent, headerArgs){
   const id = `sheet_${sheetId++}`
   class SheetWrapper extends React.Component {
     constructor (props) {
@@ -28,7 +28,7 @@ function sheetWithHeader(BodyComponent, HeaderComponent){
     componentWillMount () {
       this.dispatch(enteringSheet({
         id,
-        size: this.props.size,
+        size: headerArgs.size,
         offset: 0,
         enter: true
       }))
@@ -60,6 +60,7 @@ function sheetWithHeader(BodyComponent, HeaderComponent){
 
     render () {
       const {classes, location} = this.props
+      const actionProps = {...this.props,...headerArgs}
       return (
 
         <div key={id} className={classes.root}>
@@ -73,7 +74,7 @@ function sheetWithHeader(BodyComponent, HeaderComponent){
                    this.props.state.enter ? 'sheet-entering' : 'sheet-entered',
                    `sheet-offset-${this.props.state.offset}`
                  )}>
-            <HeaderComponent id={id} {...this.props}/>
+            <HeaderComponent id={id} {...actionProps}/>
             <div className={classes.content}>
               <BodyComponent id={id} {...this.props}/>
             </div>
@@ -103,7 +104,6 @@ function sheetWithHeader(BodyComponent, HeaderComponent){
   }
 
   SheetWrapper.propTypes = {
-    size : PropTypes.number.isRequired
   }
 
   return withRouter(connect(mapStateToProps, mapDispachToProps)(withStyles(styles)(withTimeout(SheetWrapper))))

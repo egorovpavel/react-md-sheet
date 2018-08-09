@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { ActionHeader, Builder, Route, SimpleHeader } from 'react-md-sheet'
-import NewUserView from './Details'
+import NewUserView from './User/Details'
 import SubView from './Sub'
 import SubSubView from './SubSub'
 import DeepView from './Deep'
@@ -25,10 +25,10 @@ function App () {
         </Grid>
       </Grid>
 
-      <Route path={`/users/*`} component={NewUserView} title='New User' color={'default'} size={40}/>
-      <Route path={`/users/:id/sub`} component={SubView} title='Sub' color={'default'} size={60}/>
-      <Route path={`/users/:id/sub/sub`} component={SubSubView} title='Sub Sub' size={70}/>
-      <Route path={`/users/:id/sub/sub/deep`} component={DeepView} title='Deep sheet' color={'default'} size={80}/>
+      <Route path={`/users/*`} component={NewUserView}/>
+      <Route path={`/users/:id/sub`} component={SubView}/>
+      <Route path={`/users/:id/sub/sub`} component={SubSubView}/>
+      <Route path={`/users/:id/sub/sub/deep`} component={DeepView}/>
 
     </div>
   )
