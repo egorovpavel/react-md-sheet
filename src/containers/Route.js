@@ -24,9 +24,7 @@ class PropsRouter extends React.Component {
 }
 
 PropsRouter.propTypes = {
-  component: PropTypes.node.isRequired,
-  size: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired
+
 }
 
 export default withRouter(connect()((PropsRouter)))

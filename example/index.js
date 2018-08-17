@@ -4,7 +4,8 @@ import ReactDom from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { combineReducers, createStore } from 'redux'
 import { Provider } from 'react-redux'
-import {reducersSheet} from 'react-md-sheet'
+import { reducersSheet } from 'react-md-sheet'
+import { MuiThemeProvider } from 'material-ui'
 
 const combined = combineReducers({
   reducersSheet
@@ -18,7 +19,9 @@ const store = createStore(
 ReactDom.render(
   <Provider store={store}>
     <Router>
-      <App/>
+      <MuiThemeProvider>
+        <App/>
+      </MuiThemeProvider>
     </Router>
   </Provider>
   , document.querySelector('#app'))

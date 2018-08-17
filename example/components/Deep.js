@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+import { ActionHeader, sheetWithHeader } from 'react-md-sheet'
 
 class NewUserView extends React.Component {
   render () {
@@ -12,4 +13,4 @@ class NewUserView extends React.Component {
   }
 }
 
-export default withRouter(connect()(NewUserView))
+export default withRouter(connect()(sheetWithHeader(NewUserView,ActionHeader)))

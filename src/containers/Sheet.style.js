@@ -8,8 +8,12 @@ export default {
     bottom: 0,
     right: 0,
   },
+  flex : {
+
+  },
   content: {
     backgroundColor: 'rgb(250,250,250)',
+    padding: '1em',
     height: '100%',
     zIndex: -1,
   },
